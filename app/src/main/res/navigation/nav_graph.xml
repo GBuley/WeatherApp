@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/weatherFragment">
+
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="grant.com.weatherapp.WeatherFragment"
+        android:label="WeatherFragment" >
+        <argument
+            android:name="weathercurrent"
+            app:argType="grant.com.weatherapp.model.WeatherCurrent"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="weatherforecast"
+            app:argType="grant.com.weatherapp.model.WeatherForecast"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
+</navigation>
