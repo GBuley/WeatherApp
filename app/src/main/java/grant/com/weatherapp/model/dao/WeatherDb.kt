@@ -4,10 +4,14 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import grant.com.weatherapp.local.Converters
 import grant.com.weatherapp.model.WeatherCurrent
 import grant.com.weatherapp.model.WeatherForecast
 
-@Database(entities = [WeatherCurrent::class], version = 1)
+@ExperimentalStdlibApi
+@TypeConverters(Converters::class)
+@Database(entities = [WeatherCurrent::class], version = 3)
 abstract class WeatherDb : RoomDatabase(){
 
     abstract fun weatherCurrentDAO():WeatherCurrentDAO
@@ -22,7 +26,7 @@ abstract class WeatherDb : RoomDatabase(){
                     if(INSTANCE == null){
                         INSTANCE = Room.databaseBuilder(
                             context.applicationContext, WeatherDb::class.java, DB_NAME
-                        ).build()
+                        ).fallbackToDestructiveMigration().build()
                     }
                 }
             return INSTANCE

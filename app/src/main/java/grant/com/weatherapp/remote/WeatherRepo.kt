@@ -7,6 +7,7 @@ import grant.com.weatherapp.model.WeatherForecast
 import grant.com.weatherapp.model.dao.WeatherDb
 import java.util.*
 
+@ExperimentalStdlibApi
 object WeatherRepo {
     private const val TAG = "WeatherRepo"
     private const val TIMESTAMP_PREF = "TIMESTAMP_PREF"
@@ -19,12 +20,13 @@ object WeatherRepo {
     suspend fun getForecastWeatherForCity(cityName : String) : WeatherForecast {
         return RetroFitInstance.weatherService.getForecastWeatherForCity(cityName, API_KEY, "imperial")
     }
-//    suspend fun getCurrentWeatherForCity2(cityName : String) : WeatherCurrent{
+//    }
+
+    //    suspend fun getCurrentWeatherForCity2(cityName : String) : WeatherCurrent{
 //        return RetroFitInstance.jobService.getCurrentWeatherForCity(cityName, API_KEY, "imperial")
 //    }
 //    suspend fun getForecastWeatherForCity2(cityName : String) : WeatherForecast {
 //        return RetroFitInstance.jobService.getForecastWeatherForCity(cityName, API_KEY, "imperial")
-//    }
 
     suspend fun getCurrentWeatherForCity(context: Context, cityName: String) : WeatherCurrent? {
 

@@ -15,6 +15,7 @@ import grant.com.weatherapp.model.WeatherCurrent
 import grant.com.weatherapp.model.WeatherForecast
 import grant.com.weatherapp.viewmodel.MainViewModel
 
+@ExperimentalStdlibApi
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private val viewModel by viewModels<MainViewModel>(){

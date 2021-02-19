@@ -1,12 +1,12 @@
 {
   "formatVersion": 1,
   "database": {
-    "version": 1,
-    "identityHash": "1d64b78da35af7a9e0af0e5b566d20de",
+    "version": 2,
+    "identityHash": "0a7f11c84b80b67f8fba7326a1ea7b3c",
     "entities": [
       {
         "tableName": "current_weather",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`dao_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `base` TEXT NOT NULL, `visibility` INTEGER NOT NULL, `dt_epoch` INTEGER NOT NULL, `timezone` INTEGER NOT NULL, `id` INTEGER NOT NULL, `name` TEXT NOT NULL, `cod` INTEGER NOT NULL, `main` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`dao_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `base` TEXT NOT NULL, `visibility` INTEGER NOT NULL, `dt_epoch` INTEGER NOT NULL, `timezone` INTEGER NOT NULL, `id` INTEGER NOT NULL, `name` TEXT NOT NULL, `cod` INTEGER NOT NULL, `main` TEXT NOT NULL, `weather` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "doaid",
@@ -61,6 +61,12 @@
             "columnName": "main",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "weather",
+            "columnName": "weather",
+            "affinity": "TEXT",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -85,7 +91,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1d64b78da35af7a9e0af0e5b566d20de')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0a7f11c84b80b67f8fba7326a1ea7b3c')"
     ]
   }
 }

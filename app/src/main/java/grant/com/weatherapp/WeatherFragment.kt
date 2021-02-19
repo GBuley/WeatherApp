@@ -20,6 +20,7 @@ import grant.com.weatherapp.model.WeatherCurrent
 import grant.com.weatherapp.model.WeatherForecast
 import grant.com.weatherapp.viewmodel.MainViewModel
 
+@ExperimentalStdlibApi
 class WeatherFragment : Fragment() {
     lateinit var binding: FragmentWeatherBinding
     val viewModel: MainViewModel by activityViewModels()

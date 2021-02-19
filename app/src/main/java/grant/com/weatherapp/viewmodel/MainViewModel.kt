@@ -9,6 +9,7 @@ import grant.com.weatherapp.remote.WeatherRepo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+@ExperimentalStdlibApi
 class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val _currentWeather = MutableLiveData<WeatherCurrent>()
     val currentWeather :LiveData<WeatherCurrent> = _currentWeather
