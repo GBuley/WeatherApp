@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.navArgs
@@ -16,7 +17,9 @@ import grant.com.weatherapp.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-    private val viewModel by viewModels<MainViewModel>()
+    private val viewModel by viewModels<MainViewModel>(){
+        ViewModelProvider.AndroidViewModelFactory.getInstance(application)
+    }
     private var mainCurrentWeather : WeatherCurrent? = null
     private var mainForecastWeather : WeatherForecast? = null
     private var bundle: Bundle = Bundle()

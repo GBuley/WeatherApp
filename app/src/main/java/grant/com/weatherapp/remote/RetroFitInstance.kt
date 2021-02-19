@@ -13,6 +13,6 @@ object RetroFitInstance {
 
     val retrofit = Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(MoshiConverterFactory.create()).client(client).build()
 
-    val jobService by lazy { retrofit.create(WeatherService::class.java)}
+    val weatherService by lazy { retrofit.create(WeatherService::class.java)}
 
 }
