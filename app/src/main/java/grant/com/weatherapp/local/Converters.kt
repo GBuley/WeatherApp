@@ -1,11 +1,11 @@
 package grant.com.weatherapp.local
 
+import androidx.room.Ignore
 import androidx.room.TypeConverter
 import androidx.room.TypeConverters
 import com.squareup.moshi.Moshi
-import grant.com.weatherapp.model.Main
 import com.squareup.moshi.adapter
-import grant.com.weatherapp.model.Weather
+import grant.com.weatherapp.model.*
 
 
 @ExperimentalStdlibApi
@@ -34,4 +34,11 @@ class Converters {
         val adapter = Moshi.Builder().build().adapter<List<Weather>>()
         return adapter.fromJson(weatherString)?: listOf()
     }
+
+//
+//    var sys: Sys = Sys(0,0,"",0,0)
+//    var coord: Coord = Coord(0.0, 0.0)
+//    var wind: Wind? = null
+//    var snow: Snow? = null
+//    var clouds: Clouds? = null
 }

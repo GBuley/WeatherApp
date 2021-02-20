@@ -47,7 +47,6 @@ object WeatherRepo {
             weatherCurrentDAO?.insert(weatherCurrent)
             Log.i(TAG, "Inserted knew WeatherCurrent")
         }
-        val dataFromDb = weatherCurrentDAO?.allTimes
-        return dataFromDb
+        return weatherCurrentDAO?.allTimes
     }
 }
